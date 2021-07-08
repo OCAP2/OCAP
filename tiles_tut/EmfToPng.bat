@@ -1,0 +1,1 @@
+@for %%A in (*.emf) do (EmfToPng.exe %%A)
