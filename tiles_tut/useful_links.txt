@@ -1,0 +1,9 @@
+http://build-failed.blogspot.co.uk/2012/11/zoomable-image-with-leaflet.html
+https://sandbox.idre.ucla.edu/sandbox/general/zoomable-image-with-gdal-and-leaflet
+http://gis.stackexchange.com/questions/151745/leafletjs-how-to-set-custom-map-scale-for-a-flat-image-map-crs-simple
+https://trac.osgeo.org/gdal/ticket/2052#no1
+https://github.com/Zverik/Leaflet.LimitZoom
+https://lokeshshah.wordpress.com/2005/04/15/photoshop-tip-crop-image-without-resizing-or-resampling/
+http://gis.stackexchange.com/questions/63024/gdal2tiles-maptiles-from-bsb-kap-are-switched
+https://gist.github.com/tmcw/4954720
+http://stackoverflow.com/questions/13154295/adding-an-extra-zoom-levels-in-leaflet-maps
