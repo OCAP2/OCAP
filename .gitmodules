@@ -1,0 +1,9 @@
+[submodule "addon"]
+	path = addon
+	url = https://github.com/OCAPv2/addon.git
+[submodule "web"]
+	path = web
+	url = https://github.com/OCAPv2/web.git
+[submodule "extension"]
+	path = extension
+	url = https://github.com/OCAPv2/extension.git
