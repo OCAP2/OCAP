@@ -37,11 +37,11 @@ OCAP is a **game-changing** Arma 3 addon that allows serverside recording of mis
 Capture automatically begins when the server reaches the configured minimum player count (see userconfig settings). The addon can also be set to automatically save the recorded when the mission is ended.
 
 ### **Configuration**
-1. Configure `/ocap-web/options.json` with your public-facing IP, port, and a custom secret.
-1. Configure `/addons/@ocap/OcapReplaySaver2.cfg.json` with matching IP/port destination and secret.
+1. Configure `/web/option.json` with your public-facing IP, port, and a custom secret.
+1. Configure `/addon/addons/@ocap/OcapReplaySaver2.cfg.json` with matching IP/port destination and secret.
 	> *`newServerGameType` is used to "tag" uploaded recordings for better organization. this will be the default tag if one isn't provided to the ocap_fnc_exportData command in-game*
 	> *`traceLog` set to `1` will cause the extension to log all calls for debugging purposes*
-1. Configure `userconfig/config.hpp` with desired values
+1. Configure `/addon/userconfig/config.hpp` with desired values
 	> *`ocap_minPlayerCount` determines how many players must be connected before recording begins, useful for avoiding extra recordings of test tessions*
 	>
 	> *`ocap_frameCaptureDelay` sets how frequently the capture of all units and vehicles is run (in seconds)*
@@ -56,21 +56,21 @@ Capture automatically begins when the server reaches the configured minimum play
 
 ### **Installation**
 
-1. Copy the `web` folder somewhere on your computer. The `web/static` folder's contents will be public.
-1. Add a firewall rule and port-forwarding if necessary for. The default port is 5000 and can be customized in `web/option.json`.
+1. Copy the `/web` folder somewhere on your computer. The `web/static` folder's contents will be public.
+1. Add a firewall rule and port-forwarding if necessary. The default port is 5000 and can be customized in `web/option.json`.
 1. Copy the `addon/addons/@ocap` subfolder to the mod directory your Arma 3 server uses.
 1. Add the **absolute path** as a `serverMod` parameter in your server start script.
 	> *for example:
 	`... -port 2302 "-serverMod=C:\Servers\Arma 3\Mods\@ocap" -cfg=myServer.cfg...`*
-1. Copy the `addon/userconfig` folder to your Arma 3 directory. If a userconfig folder already exists, this will simply merge OCAP's configuration data. If not, this will create it. Doing this will change your existing file, so make a backup then load your customizations into the new format if it's changed.
+1. Copy the `addon/userconfig` folder to your Arma 3 directory. If a userconfig folder already exists, this will simply merge OCAP's configuration data. If not, this will create it. Doing this may change your existing file, so make a backup then load your customizations into the new format if it's changed.
 
 ### **Terrains**
 
 A long list of Arma 3 terrains, both vanilla and modded, are provided in a link at the top of this ReadMe. To use one:
-1. Download the .7zip file.
+1. Download the .7zip or .zip file.
 1. Extract the contents to your `web/static/images/maps` folder.
 
-The 7.zip file contains a folder titled with the world name. This folder contains a set of subfolders with tiled map images & a `map.json` file inside of it. Past and future recordings uploaded to this server that were played on that terrain will now display properly.
+The compressed file contains a folder titled with the world name. This folder contains a set of subfolders with tiled map images & a `map.json` file inside of it. Past and future recordings uploaded to this server that were played on that terrain will now display properly. In the future, we will look to implement dynamically generated vector tiling that will greatly increase the terrain resolution at higher zooms.
 
 *If someone tried to load a recording from a session played on a terrain that wasn't installed yet, the issue may persist even after installation. To fix this, they can clear their browser cache in order to force their system to re-download the terrain tiles from the server. This will be fixed in future versions.*
 
@@ -87,7 +87,7 @@ To end a mission and export capture data, call the following (server-side):
 
 // includes a specific 'tag', which will be filterable in the playback menu.
 // i.e. in playback menu, selecting "PvP" from the dropdown would make this and any other mission tagged "PvP" visible in the search
-[east, "OPFOR triumped over their enemy!", "PvP"] call ocap_fnc_exportData;
+[east, "OPFOR triumphed over their enemy!", "PvP"] call ocap_fnc_exportData;
 ```
 
 **Tip:** You can use the above function in a trigger.
@@ -106,7 +106,7 @@ if (isServer) then {
 > **WARNING**
 >
 > To ensure your recordings are saved and uploaded:
-> 1. The mission should be ended using an `endMission` function and configured to auto-save, or the `ocap_fnc_exportData` function should be executed prior to it ending. 
+> 1. The mission should be ended using a `BIS_fnc_endMission`/`BIS_fnc_endMissionServer` function and configured to auto-save, or the `ocap_fnc_exportData` function should be called prior to it ending. 
 > 1. The web server process should be running and able to accept incoming network connections.
 >
 > If the web component is not running, the upload will fail and a local copy of the compressed recording will be saved. Logs are available in the `Arma 3/ocaplog` directory to troubleshoot.
