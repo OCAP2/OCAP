@@ -3,20 +3,20 @@
 ## v1.0.0
 
 ### FIXES
-- [#4] respawned units no longer 'flicker' after respawning when corpse + new unit have same ocapID
-- changes 'side' tracking methodology to maintain tracked side of a player post-respawn
+- [[addon/#3]](https://github.com/OCAP2/addon/pull/3) respawned units no longer 'flicker' after respawning when corpse + new unit have same ocapID
+- [[addon/#1]](https://github.com/OCAP2/addon/pull/1) changes 'side' tracking methodology to maintain tracked side of a player post-respawn
 - adds http:// prefix to links generated using Share button
 
 ### CHANGES
 
 #### Platform
 - improvements to both extension and webserver builds
-- now supports Windows x64 & Linux
+- now supports Windows x64 & Linux x64
 - adds tag param in SQF export function allowing you to define the recording's 'tag' at mission end
 - removes hardcoded 'tag' defintions in web/option.json, allowing you to use any tag for missions and use them to filter by in playback selection
 
 #### Markers
-- adapted for use with A3 vanilla marker system -- SWT will be reintegrated in future
+- adapted for use with A3 vanilla marker system -- SWT will be reintegrated in future [[addon/#5]](https://github.com/OCAP2/addon/issues/5)
 - now tracks RECTANGLE, ELLIPSE, and POLYLINE markers correctly, including those made via scripted commands
 - now tracks direction, size, alpha (opacity), and markerBrush (for area markers) for more accurate display
 - adds base game, RHS, ACE, IFA map marker icons
