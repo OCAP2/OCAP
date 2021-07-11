@@ -36,3 +36,4 @@
 - adds 'type' tag column in playback selection
 - adds total kill count to players in ORBAT column at left
 - adds tracking of selected-weapon of killer when in a vehicle (events column)
+- [[OCAP/#4]](https://github.com/OCAP2/OCAP/issues/4) show role information as prefix before the players name
