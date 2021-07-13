@@ -1,6 +1,6 @@
 ![OCAP](https://i.imgur.com/4Z16B8J.png)
 
-# **Operation Capture And Playback (BETA)**
+# **Operation Capture And Playback**
 
 ![OCAP Screenshot](https://i.imgur.com/vIVW4BD.png)
 
@@ -37,7 +37,7 @@ OCAP is a **game-changing** Arma 3 addon that allows serverside recording of mis
 Capture automatically begins when the server reaches the configured minimum player count (see userconfig settings). The addon can also be set to automatically save the recorded when the mission is ended.
 
 ### **Configuration**
-1. Configure `/web/option.json` with your public-facing IP, port, and a custom secret.
+1. Configure `/web/setting.json` with your public-facing IP, port, and a custom secret.
 1. Configure `/addon/addons/@ocap/OcapReplaySaver2.cfg.json` with matching IP/port destination and secret.
 	> *`newServerGameType` is used to "tag" uploaded recordings for better organization. this will be the default tag if one isn't provided to the ocap_fnc_exportData command in-game*
 	> *`traceLog` set to `1` will cause the extension to log all calls for debugging purposes*
@@ -56,19 +56,19 @@ Capture automatically begins when the server reaches the configured minimum play
 
 ### **Installation**
 
-1. Copy the `/web` folder somewhere on your computer. The `web/static` folder's contents will be public.
-1. Add a firewall rule and port-forwarding if necessary. The default port is 5000 and can be customized in `web/option.json`.
+1. The `/web` folder contains the front-end playback system, the server for which can be launched using `ocap-webserver.exe` on Windows. A [Docker image](https://github.com/OCAP2/web/pkgs/container/web) is also available in the web repository and is Linux-compatible.
+1. Add a firewall rule and port-forwarding if necessary. The default port is 5000 and can be customized in `web/setting.json`.
 1. Copy the `addon/addons/@ocap` subfolder to the mod directory your Arma 3 server uses.
 1. Add the **absolute path** as a `serverMod` parameter in your server start script.
 	> *for example:
 	`... -port 2302 "-serverMod=C:\Servers\Arma 3\Mods\@ocap" -cfg=myServer.cfg...`*
-1. Copy the `addon/userconfig` folder to your Arma 3 directory. If a userconfig folder already exists, this will simply merge OCAP's configuration data. If not, this will create it. Doing this may change your existing file, so make a backup then load your customizations into the new format if it's changed.
+1. Copy the `addon/userconfig` folder to your Arma 3 server's root directory. If a userconfig folder already exists, this will simply merge OCAP's configuration data. If not, this will create it. Doing this may change your existing file, so make a backup then load your customizations into the new format if it's changed.
 
 ### **Terrains**
 
 A long list of Arma 3 terrains, both vanilla and modded, are provided in a link at the top of this ReadMe. To use one:
 1. Download the .7zip or .zip file.
-1. Extract the contents to your `web/static/images/maps` folder.
+1. Extract the contents to your `web/maps` folder or Docker volume.
 
 The compressed file contains a folder titled with the world name. This folder contains a set of subfolders with tiled map images & a `map.json` file inside of it. Past and future recordings uploaded to this server that were played on that terrain will now display properly. In the future, we will look to implement dynamically generated vector tiling that will greatly increase the terrain resolution at higher zooms.
 
