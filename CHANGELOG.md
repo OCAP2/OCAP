@@ -15,6 +15,7 @@
 - [[OCAP/#8]](https://github.com/OCAP2/OCAP/issues/8) Added ability to switch between time elapsed, mission and system time, if available
 - [[OCAP/#7]](https://github.com/OCAP2/OCAP/issues/7) Added support for new custom event [`capture`](https://github.com/OCAP2/OCAP/wiki/Custom-Game-Events#captured-captured)
 - [[web/#18]](https://github.com/OCAP2/web/pull/18) Increased left panel width for recent role addition
+- [[OCAP/#28]](https://github.com/OCAP2/OCAP/issues/27) Re added customizing for own logo and link, like as it existed in the old OCAP
 
 ## [v1.0.0](https://github.com/OCAP2/OCAP/releases/tag/v1.0.0)
 
