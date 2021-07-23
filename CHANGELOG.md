@@ -5,27 +5,27 @@
 ### Fixes
 
 #### Addon
-- [[OCAP/#32]](https://github.com/OCAP2/OCAP/issues/32) Firing 'bullets' from plane turret shown as triangle instead of fire lines
-- [[OCAP/#33]](https://github.com/OCAP2/OCAP/issues/33) Markers were display ~2sec delayed in OCAP
-- [[OCAP/#36]](https://github.com/OCAP2/OCAP/issues/36) Granades, any other thrown object and file lines were not shown after unit respawn
+- [[OCAP/#32]](https://github.com/OCAP2/OCAP/issues/32) Adds submunition ammo type handling for projectile tracking
+- [[OCAP/#33]](https://github.com/OCAP2/OCAP/issues/33) Marker creation time was displayed ~2sec later during playback
+- [[OCAP/#36]](https://github.com/OCAP2/OCAP/issues/36) Grenades, any other thrown object and fire lines were not shown after unit respawn
 
 #### Web
 - [[OCAP/#14]](https://github.com/OCAP2/OCAP/issues/14) Prevent markers from appearing if they should not be visible
-- [[web/#21]](https://github.com/OCAP2/web/pull/21) Fixed group list ist not filtered on first load
+- [[web/#21]](https://github.com/OCAP2/web/pull/21) Fixed group list is not filtered on first load
 
 ### Changes
 
 #### Addon
 - [[OCAP/#34]](https://github.com/OCAP2/OCAP/issues/34) Added support for ArmA3 unconscious state
 - [[OCAP/#38]](https://github.com/OCAP2/OCAP/issues/38) Disconnect now hides the controlled unit
-- [[OCAP/#39]](https://github.com/OCAP2/OCAP/issues/39) Hit events now uses firer man instead of vehicle, like the Kill event
-- [[addon/#17]](https://github.com/OCAP2/addon/pull/17) Reduce network traffic by checking maker exclusion on clientside
-- [[addon/#22]](https://github.com/OCAP2/addon/pull/22) Projectile markers how shows the direction which they are heading towards
+- [[OCAP/#39]](https://github.com/OCAP2/OCAP/issues/39) Hit/Killed events now brought into parity & sharing more accurate tracking
+- [[addon/#17]](https://github.com/OCAP2/addon/pull/17) Reduce network traffic by checking configured marker exclusions clientside
+- [[addon/#22]](https://github.com/OCAP2/addon/pull/22) Projectile markers now reflect the direction of travel
 - [[web/#29]](https://github.com/OCAP2/web/pull/29) Show kill reason as disconnect, when disconnected at the same time
 
 #### Web
-- [[OCAP/#28]](https://github.com/OCAP2/OCAP/issues/25) changed share icon
-- [[OCAP/#8]](https://github.com/OCAP2/OCAP/issues/8) Added ability to switch between time elapsed, mission and system time, if available
+- [[OCAP/#28]](https://github.com/OCAP2/OCAP/issues/25) Updated 'share' button icon
+- [[OCAP/#8]](https://github.com/OCAP2/OCAP/issues/8) Added ability to switch between time elapsed, in-world time, and system time, if available
 - [[OCAP/#7]](https://github.com/OCAP2/OCAP/issues/7) Added support for new custom event [`capture`](https://github.com/OCAP2/OCAP/wiki/Custom-Game-Events#captured-captured)
 - [[OCAP/#28]](https://github.com/OCAP2/OCAP/issues/27) Re added customizing for own logo and link, like as it existed in the old OCAP
 - [[OCAP/#12]](https://github.com/OCAP2/OCAP/issues/12) Killing units of the same side will now decrease kill count

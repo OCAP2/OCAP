@@ -1,6 +1,6 @@
 ![OCAP](https://i.imgur.com/4Z16B8J.png)
 
-# **Operation Capture And Playback**
+# **Operation Capture And Playback 2**
 
 ![OCAP Screenshot](https://i.imgur.com/vIVW4BD.png)
 
@@ -28,7 +28,7 @@ OCAP is a **game-changing** Arma 3 addon that allows serverside recording of mis
 * Event log displays events as they happened in realtime.
 * Clicking on a unit lets you follow them.
 * Server based capture - no mods required for clients.
-* See *Detailed Features* for more
+* See *Detailed Features* and our [changelog](https://github.com/OCAP2/OCAP/blob/master/CHANGELOG.md) for more!
 
 ---
 
@@ -39,20 +39,28 @@ Capture automatically begins when the server reaches the configured minimum play
 ### **Configuration**
 1. Configure `/web/setting.json` with your public-facing IP, port, and a custom secret.
 1. Configure `/addon/addons/@ocap/OcapReplaySaver2.cfg.json` with matching IP/port destination and secret.
-	> *`newServerGameType` is used to "tag" uploaded recordings for better organization. this will be the default tag if one isn't provided to the ocap_fnc_exportData command in-game*
-	> *`traceLog` set to `1` will cause the extension to log all calls for debugging purposes*
+	> `newServerGameType` is used to "tag" uploaded recordings for better organization. this will be the default tag if one isn't provided to the ocap_fnc_exportData command in-game
+	> `traceLog` set to `1` will cause the extension to log all calls for debugging purposes
 1. Configure `/addon/userconfig/config.hpp` with desired values
-	> *`ocap_minPlayerCount` determines how many players must be connected before recording begins, useful for avoiding extra recordings of test tessions*
+	> `ocap_minPlayerCount` determines how many players must be connected before recording begins, useful for avoiding extra recordings of test tessions
 	>
-	> *`ocap_frameCaptureDelay` sets how frequently the capture of all units and vehicles is run (in seconds)*
+	> `ocap_frameCaptureDelay` sets how frequently the capture of all units and vehicles is run (in seconds)
 	>
-	> *`ocap_excludeClassFromRecord` blacklists object classnames that shouldn't be tracked by OCAP*
+	> `ocap_excludeClassFromRecord` blacklists object classnames that shouldn't be tracked by OCAP
 	>
-	> *`ocap_excludeMarkerFromRecord` blacklists markers containing any of these strings in their name so they won't be captured -- used primarily for marker framework systems you don't want to include in recordings*
+	> `ocap_excludeMarkerFromRecord` blacklists markers containing any of these strings in their name so they won't be captured -- used primarily for marker framework systems you don't want to include in recordings
 	>
-	> *`ocap_saveMissionEnded` determines whether or not the recording should be saved automatically when the [`MPEnded`](https://community.bistudio.com/wiki/Arma_3:_Mission_Event_Handlers#MPEnded) event handler fires*
+	> `ocap_saveMissionEnded` determines whether or not the recording should be saved automatically when the [`MPEnded`](https://community.bistudio.com/wiki/Arma_3:_Mission_Event_Handlers#MPEnded) event handler fires
 	>
-	> *`ocap_minMissionTime` determines the minimum length of a mission -- if it's shorter, the recording will not be saved*
+	> `ocap_minMissionTime` determines the minimum length of a mission -- if it's shorter, the recording will not be saved
+	>
+	> `ocap_isDebug` will cause additional log items to be written in the 'ocaplog' files during recording. Useful for troubleshooting specific issues or getting more data on what takes place during a round.
+	>
+	> `ocap_preferACEUnconscious` defaults true, assuming that you're using ACE Medical and their unconscious system. If you aren't, please set this to false, and we'll instead track Arma 3's vanilla revive/down system.
+	>
+	> `ocap_trackTimes` determines whether or not periodic updates are recorded containing time data from in-world. This should be set to `true` if you run missions that use time acceleration or time skips, to ensure the accurate time is recorded rather than having inaccurate extrapolation.
+	>
+	> `ocap_trackTimeInterval` determines how often time data is saved. The default is every 10 frames, which would be 10\*ocap_frameCaptureDelay.
 
 ### **Installation**
 
@@ -60,8 +68,8 @@ Capture automatically begins when the server reaches the configured minimum play
 1. Add a firewall rule and port-forwarding if necessary. The default port is 5000 and can be customized in `web/setting.json`.
 1. Copy the `addon/addons/@ocap` subfolder to the mod directory your Arma 3 server uses.
 1. Add the **absolute path** as a `serverMod` parameter in your server start script.
-	> *for example:
-	`... -port 2302 "-serverMod=C:\Servers\Arma 3\Mods\@ocap" -cfg=myServer.cfg...`*
+	> for example:
+	> `... -port 2302 "-serverMod=C:\Servers\Arma 3\Mods\@ocap" -cfg=myServer.cfg...`
 1. Copy the `addon/userconfig` folder to your Arma 3 server's root directory. If a userconfig folder already exists, this will simply merge OCAP's configuration data. If not, this will create it. Doing this may change your existing file, so make a backup then load your customizations into the new format if it's changed.
 
 ### **Terrains**
@@ -118,9 +126,17 @@ if (isServer) then {
 
 ### -- Easy playback selection, low storage requirements --
 
-Each recording is saved in a compressed file, which means hundreds to be saved with minimal space usage (<2MB each).
+Each recording is saved in a compressed file, which means hundreds to be saved with minimal space usage (<5MB each).
 
-Recordings can be easily browsed and are filterable and searchable with custom tagging, mission name search, and recording date search windows. 
+Recordings can be easily browsed and are filterable and searchable with custom tagging, mission name search, and recording date search windows.
+
+
+### -- Units in Mission --
+
+- OCAP2 tracks players, AI, and vehicles in a mission.
+- Group names and roles a player was slotted as are displayed during playback.
+- Players will remain in the list only while they're connected.
+- Vehicles will show who is crewing them, if anyone.
 
 ### -- Events List --
 
@@ -131,11 +147,13 @@ A filterable list of game events is available during playback and will include t
 - Hits/Injuries (filtered out by default)
 - An optional scripted game ending description logged at end of recording, such as which faction won and how
 
+**Now supports custom events!** Check out [the wiki](https://github.com/OCAP2/OCAP/wiki/Custom-Game-Events) for details.
+
 ### -- Markers --
 
 This suite will track all marker types in the vanilla Arma 3 system, even those created via scripts. This includes elliptical and rectangular markers, and the [`BIS_fnc_moduleCoverMap`](https://community.bistudio.com/wiki/BIS_fnc_moduleCoverMap) module (when present) to more clearly define AOs.
 
-> #### **New! Drawn Map Lines**
+> #### **Drawn Map Lines**
 > Custom drawn map lines are now recorded as well, providing more context to the static icons previously tracked.
 
 ### -- Projectiles --
