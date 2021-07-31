@@ -5,6 +5,7 @@
 ### Fixes
 
 #### Addon
+- [[addon/#25]](https://github.com/OCAP2/addon/pull/25) Fixes incorrect color for "ColorUNKNOWN" in playback
 - [[OCAP/#32]](https://github.com/OCAP2/OCAP/issues/32) Adds submunition ammo type handling for projectile tracking
 - [[OCAP/#33]](https://github.com/OCAP2/OCAP/issues/33) Marker creation time was displayed ~2sec later during playback
 - [[OCAP/#36]](https://github.com/OCAP2/OCAP/issues/36) Grenades, any other thrown object and fire lines were not shown after unit respawn
