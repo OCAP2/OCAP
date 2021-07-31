@@ -44,23 +44,25 @@ Capture automatically begins when the server reaches the configured minimum play
 1. Configure `/addon/userconfig/config.hpp` with desired values
 	> `ocap_minPlayerCount` determines how many players must be connected before recording begins, useful for avoiding extra recordings of test tessions
 	>
+	> `ocap_minMissionTime` determines the minimum length of a mission -- if it's shorter, the recording will not be saved
+	>
 	> `ocap_frameCaptureDelay` sets how frequently the capture of all units and vehicles is run (in seconds)
-	>
-	> `ocap_excludeClassFromRecord` blacklists object classnames that shouldn't be tracked by OCAP
-	>
-	> `ocap_excludeMarkerFromRecord` blacklists markers containing any of these strings in their name so they won't be captured -- used primarily for marker framework systems you don't want to include in recordings
 	>
 	> `ocap_saveMissionEnded` determines whether or not the recording should be saved automatically when the [`MPEnded`](https://community.bistudio.com/wiki/Arma_3:_Mission_Event_Handlers#MPEnded) event handler fires
 	>
-	> `ocap_minMissionTime` determines the minimum length of a mission -- if it's shorter, the recording will not be saved
-	>
-	> `ocap_isDebug` will cause additional log items to be written in the 'ocaplog' files during recording. Useful for troubleshooting specific issues or getting more data on what takes place during a round.
-	>
 	> `ocap_preferACEUnconscious` defaults true, assuming that you're using ACE Medical and their unconscious system. If you aren't, please set this to false, and we'll instead track Arma 3's vanilla revive/down system.
+	>
+	> `ocap_excludeClassFromRecord` blacklists object classnames that shouldn't be tracked by OCAP
+	>
+	> `ocap_excludeKindFromRecord` use isKindOf checking to exclude one or more hierarchies of objects from recording
+	>
+	> `ocap_excludeMarkerFromRecord` blacklists markers containing any of these strings in their name so they won't be captured -- used primarily for marker framework systems you don't want to include in recordings
 	>
 	> `ocap_trackTimes` determines whether or not periodic updates are recorded containing time data from in-world. This should be set to `true` if you run missions that use time acceleration or time skips, to ensure the accurate time is recorded rather than having inaccurate extrapolation.
 	>
 	> `ocap_trackTimeInterval` determines how often time data is saved. The default is every 10 frames, which would be 10\*ocap_frameCaptureDelay.
+	>
+	> `ocap_isDebug` will cause additional log items to be written in the 'ocaplog' files during recording. Useful for troubleshooting specific issues or getting more data on what takes place during a round.
 
 ### **Installation**
 
