@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v1.1.0 (unreleased)
+## v1.1.0
 
 ### Fixes
 
@@ -16,7 +16,14 @@
 ### Changes
 
 #### Addon
-- [[OCAP/#34]](https://github.com/OCAP2/OCAP/issues/34) Added support for ArmA3 unconscious state
+- [[addon/#25]](https://github.com/OCAP2/addon/pull/25)
+	- Adds support for "isKindOf" object recording exclusion
+	- Checks for ACE modules before running monitors that depend on them
+	- Positions now tracked in ASL for future surprises :)
+	- Addon and extension versions now recorded in JSON
+	- Adds descriptions to userconfig/config.hpp settings
+- [[OCAP/#45]](https://github.com/OCAP2/OCAP/issues/45) Adds diary entry in-game showing about and status of addon, plus versions
+- [[OCAP/#34]](https://github.com/OCAP2/OCAP/issues/34) Adds support for ArmA3 unconscious state
 - [[OCAP/#38]](https://github.com/OCAP2/OCAP/issues/38) Disconnect now hides the controlled unit
 - [[OCAP/#39]](https://github.com/OCAP2/OCAP/issues/39) Hit/Killed events now brought into parity & sharing more accurate tracking
 - [[addon/#17]](https://github.com/OCAP2/addon/pull/17) Reduce network traffic by checking configured marker exclusions clientside
@@ -24,13 +31,16 @@
 - [[web/#29]](https://github.com/OCAP2/web/pull/29) Show kill reason as disconnect, when disconnected at the same time
 
 #### Web
-- [[OCAP/#28]](https://github.com/OCAP2/OCAP/issues/25) Updated 'share' button icon
-- [[OCAP/#8]](https://github.com/OCAP2/OCAP/issues/8) Added ability to switch between time elapsed, in-world time, and system time, if available
-- [[OCAP/#7]](https://github.com/OCAP2/OCAP/issues/7) Added support for new custom event [`capture`](https://github.com/OCAP2/OCAP/wiki/Custom-Game-Events#captured-captured)
-- [[OCAP/#28]](https://github.com/OCAP2/OCAP/issues/27) Re added customizing for own logo and link, like as it existed in the old OCAP
+- [[OCAP/#42]](https://github.com/OCAP2/OCAP/issues/42) Adds CUP Maps markers
+- [[OCAP/#41]](https://github.com/OCAP2/OCAP/issues/41) Adds 3CB Factions markers
+- [[OCAP/#46]](https://github.com/OCAP2/OCAP/issues/46) Adds ability to hide killcount info during playback
+- [[OCAP/#28]](https://github.com/OCAP2/OCAP/issues/25) Updates 'share' button icon
+- [[OCAP/#8]](https://github.com/OCAP2/OCAP/issues/8) Adds ability to switch between time elapsed, in-world time, and system time, if available
+- [[OCAP/#7]](https://github.com/OCAP2/OCAP/issues/7) Adds support for new custom event [`capture`](https://github.com/OCAP2/OCAP/wiki/Custom-Game-Events#captured-captured)
+- [[OCAP/#28]](https://github.com/OCAP2/OCAP/issues/27) Re adds customizing for own logo and link, like as it existed in the old OCAP
 - [[OCAP/#12]](https://github.com/OCAP2/OCAP/issues/12) Killing units of the same side will now decrease kill count
-- [[web/#18]](https://github.com/OCAP2/web/pull/18) Increased left panel width for recent role addition
-- [[web/#33]](https://github.com/OCAP2/web/pull/33) Enabled caching for static marker icons & map tiles
+- [[web/#18]](https://github.com/OCAP2/web/pull/18) Increases left panel width for recent role addition
+- [[web/#33]](https://github.com/OCAP2/web/pull/33) Enables caching for static marker icons & map tiles
 
 ## [v1.0.0](https://github.com/OCAP2/OCAP/releases/tag/v1.0.0)
 
