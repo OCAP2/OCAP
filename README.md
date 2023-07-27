@@ -135,7 +135,7 @@ Recordings can be easily browsed and are filterable and searchable with custom t
 
 ### -- Units in Mission --
 
-- OCAP2 tracks players, AI, and vehicles in a mission.
+- OCAP tracks players, AI, and vehicles in a mission.
 - Group names and roles a player was slotted as are displayed during playback.
 - Players will remain in the list only while they're connected.
 - Vehicles will show who is crewing them, if anyone.

@@ -11,16 +11,16 @@ _newMap = {
 	params ["_configName", "_displayName"];
 	_str = format ['
 		{
-			"name": %3,
+			"name": %1,
 			"worldName": %2,
-			"worldSize": -1,
+			"worldSize": %3,
 			"imageSize": 16384,
 			"multiplier": -1
 		}
 		',
-		endl,
+		str _displayName,
 		str _configName,
-		str _displayName
+		_displayName call BIS_fnc_mapSize
 	];
 	_str
 };

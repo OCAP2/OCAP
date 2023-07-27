@@ -1,0 +1,99 @@
+Format: 1.52
+
+
+Title: OCAP2
+SubTitle: Operations Capture and Playback
+
+Footer: Maintained by the OCAP2 team
+Timestamp: yyyy-mm-dd
+#   m     - One or two digit month.  January is "1"
+#   mm    - Always two digit month.  January is "01"
+#   mon   - Short month word.  January is "Jan"
+#   month - Long month word.  January is "January"
+#   d     - One or two digit day.  1 is "1"
+#   dd    - Always two digit day.  1 is "01"
+#   day   - Day with letter extension.  1 is "1st"
+#   yy    - Two digit year.  2006 is "06"
+#   yyyy  - Four digit year.  2006 is "2006"
+#   year  - Four digit year.  2006 is "2006"
+
+
+# --------------------------------------------------------------------------
+# 
+# Cut and paste the lines below to change the order in which your files
+# appear on the menu.  Don't worry about adding or removing files, Natural
+# Docs will take care of that.
+# 
+# You can further organize the menu by grouping the entries.  Add a
+# "Group: [name] {" line to start a group, and add a "}" to end it.
+# 
+# You can add text and web links to the menu by adding "Text: [text]" and
+# "Link: [name] ([URL])" lines, respectively.
+# 
+# The formatting and comments are auto-generated, so don't worry about
+# neatness when editing the file.  Natural Docs will clean it up the next
+# time it is run.  When working with groups, just deal with the braces and
+# forget about the indentation and comments.
+# 
+# --------------------------------------------------------------------------
+
+
+Link: Wiki  (https://ocap2.notion.site/Operations-Capture-and-Playback-2-9b868db4414f4ea4830f0f4b1cbacb54)
+Link: Github  (https://github.com/OCAP2/OCAP)
+Link: Issues  (https://github.com/OCAP2/OCAP/issues)
+Link: Download  (https://github.com/OCAP2/OCAP/releases)
+Index: Index (Everything)
+Function Index: Index (Functions)
+Variable Index: Index (Variables)
+Macro Index: Index (Macros)
+File Index: Index (Files)
+Event Handler Index: A3 Event Handlers
+CBA Setting Index: CBA Settings
+CBA Event Index: CBA Events
+
+Group: main  {
+
+   File: CBA Settings  (main\XEH_preInit.sqf)
+   File: script_component.hpp  (main\script_component.hpp)
+   File: script_macros.hpp  (main\script_macros.hpp)
+   }  # Group: main
+
+Group: extension  {
+
+   File: fnc_sendData.sqf  (extension\fnc_sendData.sqf)
+   File: script_component.hpp  (extension\script_component.hpp)
+   }  # Group: extension
+
+Group: recorder  {
+
+   File: CBA Settings  (recorder\XEH_preInit.sqf)
+   File: fnc_aceExplosives.sqf  (recorder\fnc_aceExplosives.sqf)
+   File: fnc_addEventMission.sqf  (recorder\fnc_addEventMission.sqf)
+   File: fnc_addUnitEventHandlers.sqf  (recorder\fnc_addUnitEventHandlers.sqf)
+   File: fnc_adminUIControl.sqf  (recorder\fnc_adminUIcontrol.sqf)
+   File: fnc_captureLoop.sqf  (recorder\fnc_captureLoop.sqf)
+   File: fnc_eh_connected.sqf  (recorder\fnc_eh_connected.sqf)
+   File: fnc_eh_disconnected.sqf  (recorder\fnc_eh_disconnected.sqf)
+   File: fnc_eh_firedMan.sqf  (recorder\fnc_eh_firedMan.sqf)
+   File: fnc_eh_killed.sqf  (recorder\fnc_eh_killed.sqf)
+   File: fnc_eh_onUserAdminStateChanged.sqf  (recorder\fnc_eh_onUserAdminStateChanged.sqf)
+   File: fnc_eh_projectileHit.sqf  (recorder\fnc_eh_projectileHit.sqf)
+   File: fnc_entityMonitors.sqf  (recorder\fnc_entityMonitors.sqf)
+   File: fnc_exportData.sqf  (recorder\fnc_exportData.sqf)
+   File: fnc_getAmmoMarkerData.sqf  (recorder\fnc_getAmmoMarkerData.sqf)
+   File: fnc_getClass.sqf  (recorder\fnc_getClass.sqf)
+   File: fnc_getEventWeaponText.sqf  (recorder\fnc_getEventWeaponText.sqf)
+   File: fnc_getInstigator.sqf  (recorder\fnc_getInstigator.sqf)
+   File: fnc_getUnitType.sqf  (recorder\fnc_getUnitType.sqf)
+   File: fnc_getWeaponDisplayData.sqf  (recorder\fnc_getWeaponDisplayData.sqf)
+   File: fnc_handleCustomEvent.sqf  (recorder\fnc_handleCustomEvent.sqf)
+   File: fnc_handleMarkers.sqf  (recorder\fnc_handleMarkers.sqf)
+   File: fnc_init.sqf  (recorder\fnc_init.sqf)
+   File: fnc_isKindOfApc.sqf  (recorder\fnc_isKindOfApc.sqf)
+   File: fnc_projectileMonitors.sqf  (recorder\fnc_projectileMonitors.sqf)
+   File: fnc_startRecording.sqf  (recorder\fnc_startRecording.sqf)
+   File: fnc_stopRecording.sqf  (recorder\fnc_stopRecording.sqf)
+   File: fnc_updateTime.sqf  (recorder\fnc_updateTime.sqf)
+   File: script_component.hpp  (recorder\script_component.hpp)
+   }  # Group: recorder
+
