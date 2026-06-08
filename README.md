@@ -4,11 +4,8 @@
 
 ![OCAP Screenshot](https://i.imgur.com/vIVW4BD.png)
 
-**[Friday Night Fight Demo](http://aar.fridaynightfight.org/)**
-
-**[Maps for OCAP (Google Drive)](https://drive.google.com/drive/folders/1qtT0Fr4Dfwd48ihZNc8YN-xgxHchKoiu)**
-
-**[OCAP Development and Support on Discord](https://discord.gg/r98bDxgZbV)**
+- [Maps for OCAP (Google Drive)](https://drive.google.com/drive/folders/1qtT0Fr4Dfwd48ihZNc8YN-xgxHchKoiu)
+- [Development, Support & Demos (Discord)](https://discord.gg/r98bDxgZbV)
 
 ## What is it?
 
