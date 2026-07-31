@@ -33,7 +33,7 @@ If you are running the web server in Docker or on a game server panel, you only 
 | `ghcr.io/ocap2/web:latest` | Slim — web server only |
 | `ghcr.io/ocap2/web:full` | Includes GDAL, tippecanoe, and pmtiles for server-side map terrain tile processing |
 
-Use `:full` if you want to process and host custom Arma 3 terrain tiles through the admin UI. Use `:latest` otherwise.
+Use `:full` if you have grad_meh exports that you want to import in the admin UI. Use `:latest` otherwise. You only need `:latest` to locally host map tiles such as those from [Google Drive](https://drive.google.com/drive/folders/1qtT0Fr4Dfwd48ihZNc8YN-xgxHchKoiu).
 
 ---
 
@@ -223,7 +223,7 @@ Set `OCAP_SECRET` to the same value as `api.apiKey` in the extension's `ocap_rec
 
 Any `setting.json` field can be set as an environment variable using the `OCAP_` prefix with nested keys uppercased and concatenated (e.g. `auth.steamApiKey` → `OCAP_AUTH_STEAMAPIKEY`). See [Configuration Reference](configuration.md).
 
-> **Map tools:** To use the server-side map tile processing pipeline (GDAL, tippecanoe), use `ghcr.io/ocap2/web:full` instead of `:latest`.
+> **Map tools:** To use the server-side pipeline for for processing grad-meh exports into map tiles (GDAL, tippecanoe), choose `ghcr.io/ocap2/web:full` instead of `:latest`.
 
 ### Start the server
 
@@ -286,4 +286,4 @@ Start the server from the panel. The install script automatically creates the re
 
 Visit the server's allocated address to confirm the web UI is accessible.
 
-> **Docker image:** The egg uses `ghcr.io/ocap2/web:full` by default, which includes the map tile processing tools. To use the smaller slim image, change the Docker image in the egg or server settings to `ghcr.io/ocap2/web:latest`.
+> **Docker image:** The egg uses `ghcr.io/ocap2/web:full` by default, which includes the tools needed to process grad_meh exports into map tiles. To use the smaller slim image, change the Docker image in the egg or server settings to `ghcr.io/ocap2/web:latest`.
