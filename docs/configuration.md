@@ -120,7 +120,7 @@ Place this file alongside the DLL inside the `@ocap/` mod directory. Copy from `
 
 | Field | Default | Description |
 |---|---|---|
-| `serverUrl` | `"http://127.0.0.1:5000"` | Base URL of the OCAP web server that will receive uploaded recordings. |
+| `serverUrl` | `"http://127.0.0.1:5000"` | Base URL of the OCAP web server that will receive uploaded recordings. If [`prefixUrl`](#core-fields) is used, this URL should match it, e.g. `"http://127.0.0.1:5000/ocap"`. |
 | `apiKey` | `"same-secret"` | Shared secret used to authenticate uploads to the web server. Must match `setting.json` → `secret`. |
 | `uploadTimeout` | `"10m"` | Maximum time to wait for an upload to complete before aborting. |
 
@@ -226,7 +226,7 @@ Any field can be overridden via an `OCAP_<KEY>` environment variable. For nested
 | Field | Default | Description |
 |---|---|---|
 | `listen` | `"127.0.0.1:5000"` | Address and port the HTTP server listens on. |
-| `prefixURL` | `""` | URL prefix for all routes. Useful when hosted behind a reverse proxy at a sub-path. |
+| `prefixURL` | `""` | URL prefix for all routes, e.g. `"/ocap"`. Useful when hosted behind a reverse proxy at a sub-path. Must be appended to `ocap_recorder.cfg.json` → [`api.serverUrl`](#api). |
 | `secret` | `"change-me"` | Shared secret for authenticating mission uploads from the extension. Must match `ocap_recorder.cfg.json` → `api.apiKey`. |
 | `db` | `"data.db"` | Path to the SQLite database file used for mission metadata. |
 | `data` | `"data"` | Directory where mission recording files are stored. |
