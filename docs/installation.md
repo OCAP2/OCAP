@@ -223,7 +223,7 @@ Set `OCAP_SECRET` to the same value as `api.apiKey` in the extension's `ocap_rec
 
 Any `setting.json` field can be set as an environment variable using the `OCAP_` prefix with nested keys uppercased and concatenated (e.g. `auth.steamApiKey` → `OCAP_AUTH_STEAMAPIKEY`). See [Configuration Reference](configuration.md).
 
-> **Map tools:** To use the server-side pipeline for for processing grad-meh exports into map tiles (GDAL, tippecanoe), choose `ghcr.io/ocap2/web:full` instead of `:latest`.
+> **Map tools:** To use the server-side pipeline for for processing grad_meh exports into map tiles (GDAL, tippecanoe), choose `ghcr.io/ocap2/web:full` instead of `:latest`.
 
 ### Start the server
 
