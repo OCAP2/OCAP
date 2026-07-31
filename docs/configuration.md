@@ -242,7 +242,7 @@ Any field can be overridden via an `OCAP_<KEY>` environment variable. For nested
 | Field | Default | Description |
 |---|---|---|
 | `steamApiKey` | `""` | Steam Web API key used to validate Steam OpenID logins. Required for authentication features. |
-| `adminSteamIds` | `[]` | List of Steam64 IDs that are granted administrator access. |
+| `adminSteamIds` | `[]` | List of Steam64 IDs that are granted administrator access (comma-separated in env var). |
 | `sessionTTL` | `"24h"` | How long a user session remains valid after login. |
 
 ### `conversion`
