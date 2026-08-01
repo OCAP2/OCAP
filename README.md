@@ -53,8 +53,8 @@ For mission integration (SQF/CBA API, custom events, score counters, focus windo
 
 ### Terrains
 
-A long list of Arma 3 terrains, both vanilla and modded, are provided in a link at the top of this ReadMe. To use one:
-1. Download the .7zip or .zip file.
+We host a long list of Arma 3 terrains, both vanilla and modded, on our CDN for the web playback UI. You do not need to download any of our map tiles, but if it is preferred, you can:
+1. Download the .7z from [Google Drive](https://drive.google.com/drive/folders/1qtT0Fr4Dfwd48ihZNc8YN-xgxHchKoiu).
 1. Extract the contents to your `web/maps` folder or Docker volume.
 
 The compressed file contains a folder titled with the world name. This folder contains a set of subfolders with tiled map images & a `map.json` file inside of it. Past and future recordings uploaded to this server that were played on that terrain will now display properly. In the future, we will look to implement dynamically generated vector tiling that will greatly increase the terrain resolution at higher zooms.
